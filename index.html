@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minsung Jang — AI Systems &amp; Accelerated Computing</title>
+<meta name="description" content="Minsung Jang is a systems researcher across the full AI-infrastructure stack — accelerator-aware runtimes, GPU-cluster training, AI-datacenter networking, and cloud and secure systems. AI Systems Research at Samsung SDS; Ph.D., Georgia Tech.">
+<link rel="canonical" href="https://minsungmj.github.io/">
+<meta name="author" content="Minsung Jang">
+<meta name="theme-color" content="#1f4a63">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Minsung Jang — AI Systems &amp; Accelerated Computing">
+<meta property="og:description" content="Systems researcher across the full AI-infrastructure stack: accelerators, GPU clusters, datacenter networking, and cloud.">
+<meta property="og:url" content="https://minsungmj.github.io/">
+<meta property="og:image" content="https://minsungmj.github.io/assets/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Minsung Jang — AI Systems &amp; Accelerated Computing">
+<meta name="twitter:description" content="Systems researcher across the full AI-infrastructure stack.">
+<meta name="twitter:image" content="https://minsungmj.github.io/assets/img/og-card.png">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/img/headshot.png">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="print.css" media="print">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Minsung Jang",
+  "alternateName": "장민성",
+  "url": "https://minsungmj.github.io/",
+  "image": "https://minsungmj.github.io/assets/img/headshot.png",
+  "description": "Systems researcher across the full AI-infrastructure stack — accelerator-aware runtimes, GPU-cluster training, AI-datacenter networking, and cloud and secure systems.",
+  "knowsAbout": ["AI Systems","AI Accelerators","Processing-in-Memory","LLM Inference Serving","GPU Cluster Systems","AI-Datacenter Networking","RDMA","Cloud Systems","Confidential Computing"],
+  "affiliation": {"@type": "Organization", "name": "Samsung SDS"},
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "Georgia Institute of Technology"},
+    {"@type": "CollegeOrUniversity", "name": "Yonsei University"}
+  ],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=o9WQFhIAAAAJ&hl=en",
+    "https://github.com/MinsungMJ",
+    "https://www.linkedin.com/in/minsungjang",
+    "https://dblp.org/pid/84/10278.html"
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="sidenav" aria-label="Section navigation">
+  <ul>
+    <li><a href="#top">Top</a></li>
+    <li><a href="#identity">Research identity</a></li>
+    <li><a href="#research">Selected research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#talks">Talks</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#opensource">Open source</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1>Minsung Jang <span class="ko" lang="ko">장민성</span></h1>
+      <p class="tagline">AI Systems &amp; Accelerated Computing</p>
+      <p class="subtagline">Full-Stack AI Infrastructure for Efficient and Scalable AI</p>
+      <p class="positioning">I build the computing systems that make large-scale AI practical and efficient — spanning accelerator-aware inference runtimes, GPU-cluster training, AI-datacenter networking, and cloud and secure systems.</p>
+      <p class="affil">AI Systems Research at Samsung SDS &middot; Ph.D., Georgia Tech</p>
+      <nav class="links" aria-label="Profile links">
+        <a class="btn btn-cv" href="assets/cv/minsung-jang-cv.pdf">CV (PDF)</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=o9WQFhIAAAAJ&hl=en">Google&nbsp;Scholar</a>
+        <a class="btn" href="https://github.com/MinsungMJ">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/minsungjang">LinkedIn</a>
+        <a class="btn" href="https://dblp.org/pid/84/10278.html">DBLP</a>
+        <a class="btn" href="mailto:&#109;dpe36kr&#64;gmail.com">Email</a>
+      </nav>
+    </div>
+    <div class="hero-photo">
+      <picture>
+        <source srcset="assets/img/headshot.webp" type="image/webp">
+        <img src="assets/img/headshot.png" width="180" height="180" alt="Portrait of Minsung Jang">
+      </picture>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <!-- RESEARCH IDENTITY -->
+  <section id="identity" aria-labelledby="identity-h">
+    <h2 id="identity-h">Research identity</h2>
+    <p class="lead">One workload — large-model training and inference — driven down the full stack, from accelerator runtime to cluster, network, and a secure cloud foundation.</p>
+    <div class="pillars">
+      <article class="pillar"><h3>1 · Accelerator-aware inference &amp; runtimes</h3><p>Real-hardware processing-in-memory scheduling and matrix mapping, low-precision kernels, and LLM serving.</p><p class="sys">PAISE · Omni-MP · FireQ · DSDE</p></article>
+      <article class="pillar"><h3>2 · GPU-cluster &amp; systems-for-ML training</h3><p>Convergence-safe, efficient training across heterogeneous GPU fleets; GPU-as-a-Service.</p><p class="sys">JABAS · x.Cloud</p></article>
+      <article class="pillar"><h3>3 · AI-datacenter networking</h3><p>End-host RDMA/RoCEv2 congestion control for GPU interconnect at fabric scale.</p><p class="sys">CORN (AMD hardware-NIC prototype)</p></article>
+      <article class="pillar"><h3>4 · Cloud, OS &amp; secure systems</h3><p>Cloud platforms and storage, persistent memory, and confidential computing for secure AI execution.</p><p class="sys">Samsung Cloud Platform · TIPS · Nested Enclaves</p></article>
+    </div>
+    <figure class="diagram">
+      <img src="assets/svg/stack.svg" alt="Diagram: one workload — large-model training and inference — flows down four layers: accelerator-aware runtimes, GPU-cluster training, AI-datacenter networking, and cloud and secure systems." loading="lazy" width="720" height="392">
+    </figure>
+  </section>
+
+  <!-- SELECTED RESEARCH -->
+  <section id="research" aria-labelledby="research-h">
+    <h2 id="research-h">Selected research</h2>
+
+    <article class="item">
+      <h3>PAISE <span class="venue">IEEE HPCA 2025</span> <span class="cat">Peer-reviewed</span></h3>
+      <p><span class="lab">Problem.</span> Decoder-only LLM inference is memory-bound: attention re-reads a growing KV cache and stalls the GPU on HBM bandwidth.</p>
+      <p><span class="lab">Contribution.</span> A per-layer GPU-vs-PIM offloading scheduler with data-layout adjustment and an interleaved-batched GEMM kernel on real HBM-PIM — up to 48.3% faster than GPU-only.</p>
+      <p class="role"><span class="lab">Role.</span> Senior (last) author; set the direction and the offloading-scheduling algorithm and cost model.</p>
+      <figure class="diagram"><img src="assets/svg/paise.svg" alt="PAISE schedules memory-bound attention to HBM-PIM and compute-bound layers to the GPU." loading="lazy" width="640" height="320"></figure>
+      <p class="more"><a href="https://www.samsungsds.com/en/publications/1289984_11682.html">Publication&nbsp;&rarr;</a></p>
+    </article>
+
+    <article class="item">
+      <h3>Omni-MP <span class="venue">MCCSys @ ACM ICS 2026 · to appear</span> <span class="cat">Peer-reviewed</span></h3>
+      <p><span class="lab">Problem.</span> Real PIM accepts only fixed matrix tiles, so prior PIM-for-LLM work accelerated only feed-forward layers, not attention.</p>
+      <p><span class="lab">Contribution.</span> Generalized batched PIM-GEMV mapping (interlacing/cutting), zero-tile skipping, and PIM-aware KV concatenation — 40.2% average end-to-end speedup on real hardware.</p>
+      <p class="role"><span class="lab">Role.</span> Senior co-author and real-PIM program lead; set the generalization goal.</p>
+      <figure class="diagram"><img src="assets/svg/omnimp.svg" alt="Omni-MP reshapes arbitrary LLM matrices to fit the fixed PIM compute tile and skips zero-padded tiles." loading="lazy" width="640" height="320"></figure>
+    </article>
+
+    <article class="item">
+      <h3>JABAS <span class="venue">EuroSys 2025 · with UNIST</span> <span class="cat">Peer-reviewed</span></h3>
+      <p><span class="lab">Problem.</span> Training on heterogeneous GPU clusters wastes resources, and the usual remedy breaks the i.i.d. assumption and hurts convergence.</p>
+      <p><span class="lab">Contribution.</span> IIDP preserves convergence via virtual stream workers while batching and GPU allocation are tuned jointly — &minus;33.3% time, &minus;54.2% cost, no accuracy loss.</p>
+      <p class="role"><span class="lab">Role.</span> Industry co-author (collaboration with UNIST); supplied the production heterogeneous-GPU problem and real-cluster validation context — did not lead the algorithm design.</p>
+      <figure class="diagram"><img src="assets/svg/jabas.svg" alt="JABAS keeps a shared local batch size across heterogeneous GPUs via virtual stream workers and jointly tunes batching and allocation." loading="lazy" width="640" height="320"></figure>
+      <p class="more"><a href="https://doi.org/10.1145/3689031.3696078">Publication&nbsp;&rarr;</a> <a href="https://github.com/unist-ssl/JABAS">Code&nbsp;&rarr;</a></p>
+    </article>
+
+    <article class="item">
+      <h3>CORN <span class="venue">IEEE IPCCC 2023</span> <span class="cat">Peer-reviewed</span></h3>
+      <p><span class="lab">Problem.</span> RoCEv2 leans on switch-level PFC, which causes head-of-line blocking and PFC storms at the scale of AI GPU fabrics.</p>
+      <p><span class="lab">Contribution.</span> End-host, RTT/BDP-driven congestion control with selective-ACK recovery makes RDMA run PFC-free and switch-transparent — zero PFC events in evaluation.</p>
+      <p class="role"><span class="lab">Role.</span> Senior (last) author; set the cloud-RDMA direction and the RTT-based congestion-detection idea. Implemented as a hardware-NIC prototype in collaboration with AMD and demonstrated at SC25.</p>
+      <figure class="diagram"><img src="assets/svg/corn.svg" alt="CORN places a shim in the end-host NIC between RDMA transport and UDP, using RTT signals so RDMA runs over Ethernet with no switch PFC." loading="lazy" width="640" height="320"></figure>
+      <p class="more"><a href="https://ieeexplore.ieee.org/document/10253863/">Publication&nbsp;&rarr;</a></p>
+    </article>
+
+    <article class="item">
+      <h3>DSDE <span class="venue">IEEE BigData 2025</span> <span class="cat">Peer-reviewed</span></h3>
+      <p><span class="lab">Problem.</span> A fixed speculation length in speculative decoding wastes compute and creates batch stragglers under diverse serving load.</p>
+      <p><span class="lab">Contribution.</span> A training-free, KLD-variance-driven per-sequence speculation length with an adaptive cap, implemented in vLLM — robust in low-acceptance-rate regimes.</p>
+      <p class="role"><span class="lab">Role.</span> Senior co-author and research lead; drove the adaptive speculation-length cap and the vLLM integration.</p>
+      <p class="more"><a href="https://arxiv.org/abs/2509.01083">Paper&nbsp;&rarr;</a></p>
+    </article>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" aria-labelledby="pubs-h">
+    <h2 id="pubs-h">Selected publications</h2>
+    <h3 class="grp">Peer-reviewed</h3>
+    <ol class="pubs">
+      <li><span class="au">H. Lee, D. Baek, J. Son, J. Choi, K. Moon, <b>M. Jang</b>.</span> <a href="https://www.samsungsds.com/en/publications/1289984_11682.html"><i>PAISE: PIM-Accelerated Inference Scheduling Engine for Transformer-based LLM.</i></a> IEEE HPCA 2025.</li>
+      <li><span class="au">G. Yun, J. Kang, H. Jeong, S. Eom, <b>M. Jang</b>, Y.-r. Choi.</span> <a href="https://doi.org/10.1145/3689031.3696078"><i>JABAS: Joint Adaptive Batching and Automatic Scaling for DNN Training on Heterogeneous GPUs.</i></a> EuroSys 2025. <span class="tag">with UNIST</span></li>
+      <li><span class="au">D. Baek, J. Son, J. Choi, K. Bin, S. Choi, K. Moon, <b>M. Jang</b>, H. Lee.</span> <i>Omni-MP: Practical PIM Matrix Mapping for Accelerating LLM Inference on Real PIM Hardware.</i> MCCSys @ ACM ICS 2026. <span class="tag">to appear</span></li>
+      <li><span class="au">M. Yang, J.-Y. Choi, K. Moon, <b>M. Jang</b>, E. Jeon.</span> <a href="https://arxiv.org/abs/2509.01083"><i>DSDE: Dynamic Speculative Decoding with KLD Stability for Real-World Serving.</i></a> Proceedings of IEEE BigData 2025.</li>
+      <li><span class="au">J.-H. Cha, S. Kang, Y. Kang, H. Seo, J. Lee, J. Kim, <b>M. Jang</b>.</span> <a href="https://ieeexplore.ieee.org/document/10253863/"><i>CORN: Cloud-optimized RDMA Networking.</i></a> IEEE IPCCC 2023.</li>
+    </ol>
+    <h3 class="grp">Preprints &amp; under review</h3>
+    <ol class="pubs">
+      <li><span class="au">K. Bin, S. Choi, J. Son, J. Choi, D. Bae, D. Baek, K. Moon, <b>M. Jang</b>, H. Lee.</span> <a href="https://arxiv.org/abs/2509.06261"><i>FineServe: Precision-Aware KV Slab and Two-Level Scheduling for Heterogeneous Precision LLM Serving.</i></a> <span class="tag">preprint · under review · arXiv:2509.06261</span></li>
+    </ol>
+    <p class="more">Full list: <a href="https://scholar.google.com/citations?user=o9WQFhIAAAAJ&hl=en">Google Scholar</a> &middot; <a href="https://dblp.org/pid/84/10278.html">DBLP</a></p>
+  </section>
+
+  <!-- TALKS -->
+  <section id="talks" aria-labelledby="talks-h" class="panel">
+    <h2 id="talks-h">Selected talks</h2>
+    <ul class="plain">
+      <li><b>SC25</b> (2025) — CORN implemented as a hardware-NIC prototype in collaboration with AMD, demonstrated at SC25.</li>
+      <li><b>Intel AI Summit Seoul</b> (2025) — Performance analysis of Intel Gaudi 3 for LLM inference.</li>
+      <li><b>Seoul National University</b> (2024) — Trends in AI infrastructure technologies (invited).</li>
+      <li><b>NVIDIA GTC</b> (2021) — AI model training cluster on Kubernetes (x.Cloud).</li>
+    </ul>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership" aria-labelledby="lead-h">
+    <h2 id="lead-h">Research &amp; industry leadership</h2>
+    <p>In <b>AI Systems Research at Samsung SDS</b>, set a full-stack AI-infrastructure research agenda — GPU-as-a-Service / x.Cloud, PIM-accelerated inference, and AI-datacenter networking — and built a publishing systems-research program (HPCA, IEEE BigData, MCCSys@ICS). Earlier, conducted GPU-accelerated networking and 5G vRAN research at <b>AT&amp;T Labs Research</b>.</p>
+    <p class="note">Research collaborations: UC Berkeley Sky Computing Lab — represented and led Samsung SDS's participation as a founding sponsor · UNIST · KAIST · AMD · Intel · Ultra Ethernet Consortium.</p>
+  </section>
+
+  <!-- OPEN SOURCE -->
+  <section id="opensource" aria-labelledby="os-h" class="panel">
+    <h2 id="os-h">Open source <span class="cat">Personal research artifacts</span></h2>
+    <ul class="plain">
+      <li><a href="https://github.com/MinsungMJ/Local-Inference-System">Local-Inference-System (LIS)</a> <span class="muted">Apache-2.0</span> — CPU-only local inference runtime focused on correctness, inspectability, reproducible artifacts, and transparent diagnostics.</li>
+      <li><a href="https://github.com/MinsungMJ/llm-avx-lab">llm-avx-lab</a> <span class="muted">MIT</span> — educational AVX2/FMA kernels for understanding LLM serving primitives from scalar C to SIMD.</li>
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <p>Minsung Jang is a systems researcher whose work spans the full AI-infrastructure stack. He conducts AI systems research at Samsung SDS and currently serves as an Executive Advisor. He was previously at AT&amp;T Labs Research, and earned his Ph.D. in Computer Science at the Georgia Institute of Technology (advisor: Prof. Karsten Schwan), with earlier degrees from Yonsei University.</p>
+    <dl class="edu">
+      <dt>Samsung SDS</dt><dd>AI and Cloud Systems Research · 2021–present</dd>
+      <dt>AT&amp;T Labs Research</dt><dd>GPU-accelerated NFV, 5G vRAN, persistent memory · 2015–2020</dd>
+      <dt>Georgia Institute of Technology</dt><dd>Ph.D., Computer Science · 2008–2015</dd>
+      <dt>Yonsei University</dt><dd>B.S. 1998, M.S. 2000</dd>
+    </dl>
+    <p class="contact">Contact: <a href="mailto:&#109;dpe36kr&#64;gmail.com">&#109;dpe36kr&#64;gmail.com</a></p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>&copy; <span id="yr">2026</span> Minsung Jang ·
+    <a href="https://scholar.google.com/citations?user=o9WQFhIAAAAJ&hl=en">Scholar</a> ·
+    <a href="https://github.com/MinsungMJ">GitHub</a> ·
+    <a href="https://www.linkedin.com/in/minsungjang">LinkedIn</a> ·
+    <a href="https://dblp.org/pid/84/10278.html">DBLP</a> ·
+    <a href="#top">Top</a></p>
+</footer>
+
+<script>
+/* Progressive enhancement: highlight the section in view. Without JS the
+   side-nav still works as plain in-page jump links. */
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sidenav a'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) map[id] = a;
+  });
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        links.forEach(function (a) { a.removeAttribute('aria-current'); a.classList.remove('active'); });
+        var a = map[e.target.id];
+        if (a) { a.classList.add('active'); a.setAttribute('aria-current', 'true'); }
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  Object.keys(map).forEach(function (id) { obs.observe(document.getElementById(id)); });
+})();
+</script>
+</body>
+</html>

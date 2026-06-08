@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="pa-t pa-d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="pa-t">PAISE — GPU + PIM inference scheduling</title>
+  <desc id="pa-d">A per-layer scheduler routes memory-bound attention to HBM-PIM and compute-bound layers to the GPU, reducing LLM inference time by up to 48.3 percent versus GPU-only.</desc>
+  <rect x="1" y="1" width="638" height="318" rx="14" fill="#fbfaf8" stroke="#e3ded5"/>
+  <text x="24" y="36" fill="#1d2733" font-size="16" font-weight="700">PAISE · per-layer GPU↔PIM offload scheduling</text>
+
+  <!-- scheduler -->
+  <rect x="232" y="64" width="176" height="50" rx="8" fill="#1f4a63"/>
+  <text x="320" y="86" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Offloading scheduler</text>
+  <text x="320" y="104" text-anchor="middle" fill="#cfe0ea" font-size="11">cost model · per layer</text>
+
+  <!-- GPU -->
+  <rect x="40" y="168" width="220" height="96" rx="8" fill="#eef3f6" stroke="#d6dde3"/>
+  <text x="150" y="196" text-anchor="middle" fill="#1d2733" font-size="14" font-weight="700">GPU</text>
+  <text x="150" y="220" text-anchor="middle" fill="#5b6470" font-size="12">compute-bound FC layers</text>
+  <text x="150" y="240" text-anchor="middle" fill="#5b6470" font-size="12">wide GEMM · softmax · GELU</text>
+
+  <!-- PIM -->
+  <rect x="380" y="168" width="220" height="96" rx="8" fill="#eef3f6" stroke="#d6dde3"/>
+  <text x="490" y="196" text-anchor="middle" fill="#1d2733" font-size="14" font-weight="700">HBM-PIM</text>
+  <text x="490" y="220" text-anchor="middle" fill="#5b6470" font-size="12">memory-bound attention</text>
+  <text x="490" y="240" text-anchor="middle" fill="#5b6470" font-size="12">GEMV over KV cache</text>
+
+  <!-- arrows -->
+  <g stroke="#9aa3ad" stroke-width="2" fill="none">
+    <path d="M280,114 L160,166"/><path d="M360,114 L480,166"/>
+  </g>
+  <polygon points="160,168 164,156 152,158" fill="#9aa3ad"/>
+  <polygon points="480,168 488,158 476,156" fill="#9aa3ad"/>
+
+  <text x="320" y="300" text-anchor="middle" fill="#1f4a63" font-size="13" font-weight="700">Result — up to 48.3% faster inference on real MI100 + Aquabolt-XL</text>
+</svg>

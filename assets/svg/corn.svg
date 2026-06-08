@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="cn-t cn-d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="cn-t">CORN — cloud-optimized RDMA networking</title>
+  <desc id="cn-d">An end-host shim between the RDMA transport and UDP holds inflight bytes near the bandwidth-delay product using RTT signals and recovers loss with selective ACK, so RDMA runs over a lossy Ethernet fabric with no switch PFC and zero PFC events.</desc>
+  <rect x="1" y="1" width="638" height="318" rx="14" fill="#fbfaf8" stroke="#e3ded5"/>
+  <text x="24" y="36" fill="#1d2733" font-size="16" font-weight="700">CORN · PFC-free RDMA from the end host</text>
+
+  <!-- sender host stack -->
+  <rect x="36" y="64" width="180" height="170" rx="8" fill="#eef3f6" stroke="#d6dde3"/>
+  <text x="126" y="86" text-anchor="middle" fill="#1d2733" font-size="13" font-weight="700">End-host NIC</text>
+  <rect x="56" y="98" width="140" height="34" rx="5" fill="#ffffff" stroke="#d6dde3"/><text x="126" y="120" text-anchor="middle" font-size="12" fill="#1d2733">RDMA transport</text>
+  <rect x="56" y="138" width="140" height="40" rx="5" fill="#1f4a63"/><text x="126" y="156" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">CORN shim</text><text x="126" y="171" text-anchor="middle" font-size="10" fill="#cfe0ea">RTT/BDP · selective-ACK</text>
+  <rect x="56" y="184" width="140" height="34" rx="5" fill="#ffffff" stroke="#d6dde3"/><text x="126" y="206" text-anchor="middle" font-size="12" fill="#1d2733">UDP / Ethernet</text>
+
+  <!-- plain switch -->
+  <rect x="290" y="118" width="120" height="62" rx="8" fill="#eef3f6" stroke="#d6dde3"/>
+  <text x="350" y="146" text-anchor="middle" fill="#1d2733" font-size="13" font-weight="700">Switch</text>
+  <text x="350" y="166" text-anchor="middle" fill="#5b6470" font-size="11">unmodified · no PFC</text>
+
+  <!-- receiver -->
+  <rect x="486" y="118" width="120" height="62" rx="8" fill="#eef3f6" stroke="#d6dde3"/>
+  <text x="546" y="146" text-anchor="middle" fill="#1d2733" font-size="13" font-weight="700">Receiver</text>
+  <text x="546" y="166" text-anchor="middle" fill="#5b6470" font-size="11">GPU interconnect</text>
+
+  <g stroke="#9aa3ad" stroke-width="2" fill="none">
+    <path d="M216,149 L288,149"/><path d="M410,149 L484,149"/>
+  </g>
+  <polygon points="288,149 276,144 276,154" fill="#9aa3ad"/>
+  <polygon points="484,149 472,144 472,154" fill="#9aa3ad"/>
+  <!-- rtt feedback -->
+  <path d="M484,168 C420,210 280,210 216,176" stroke="#1f4a63" stroke-width="1.6" fill="none" stroke-dasharray="5 4"/>
+  <text x="350" y="214" text-anchor="middle" fill="#1f4a63" font-size="11">RTT growth → early congestion signal</text>
+
+  <text x="320" y="298" text-anchor="middle" fill="#1f4a63" font-size="13" font-weight="700">Result — zero PFC events; switch-transparent (realized as an AMD NIC, SC25)</text>
+</svg>

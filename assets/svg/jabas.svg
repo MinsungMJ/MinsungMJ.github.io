@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="jb-t jb-d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="jb-t">JABAS — joint adaptive batching and auto-scaling</title>
+  <desc id="jb-d">On heterogeneous GPUs, IIDP keeps a shared local batch size via virtual stream workers to preserve convergence, while batching and GPU allocation are tuned jointly, cutting training time 33.3 percent and cost 54.2 percent with no accuracy loss.</desc>
+  <rect x="1" y="1" width="638" height="318" rx="14" fill="#fbfaf8" stroke="#e3ded5"/>
+  <text x="24" y="36" fill="#1d2733" font-size="16" font-weight="700">JABAS · convergence-safe training on heterogeneous GPUs</text>
+
+  <!-- heterogeneous GPUs -->
+  <text x="120" y="70" text-anchor="middle" fill="#5b6470" font-size="12">heterogeneous fleet</text>
+  <g>
+    <rect x="40" y="80" width="70" height="40" rx="5" fill="#eef3f6" stroke="#d6dde3"/><text x="75" y="105" text-anchor="middle" font-size="12" fill="#1d2733">fast</text>
+    <rect x="130" y="80" width="70" height="40" rx="5" fill="#eef3f6" stroke="#d6dde3"/><text x="165" y="105" text-anchor="middle" font-size="12" fill="#1d2733">slow</text>
+    <rect x="40" y="128" width="70" height="40" rx="5" fill="#eef3f6" stroke="#d6dde3"/><text x="75" y="153" text-anchor="middle" font-size="12" fill="#1d2733">fast</text>
+    <rect x="130" y="128" width="70" height="40" rx="5" fill="#eef3f6" stroke="#d6dde3"/><text x="165" y="153" text-anchor="middle" font-size="12" fill="#1d2733">old</text>
+  </g>
+
+  <!-- IIDP -->
+  <rect x="246" y="84" width="160" height="84" rx="8" fill="#1f4a63"/>
+  <text x="326" y="112" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">IIDP</text>
+  <text x="326" y="132" text-anchor="middle" fill="#cfe0ea" font-size="11">shared local batch</text>
+  <text x="326" y="150" text-anchor="middle" fill="#cfe0ea" font-size="11">virtual stream workers</text>
+
+  <!-- joint control -->
+  <rect x="446" y="84" width="160" height="84" rx="8" fill="#eef3f6" stroke="#d6dde3"/>
+  <text x="526" y="110" text-anchor="middle" fill="#1d2733" font-size="13" font-weight="700">Joint control</text>
+  <text x="526" y="130" text-anchor="middle" fill="#5b6470" font-size="11">adaptive batching</text>
+  <text x="526" y="148" text-anchor="middle" fill="#5b6470" font-size="11">+ auto-scaling</text>
+
+  <g stroke="#9aa3ad" stroke-width="2" fill="none">
+    <path d="M204,124 L242,124"/><path d="M410,126 L442,126"/>
+  </g>
+  <polygon points="242,124 230,119 230,129" fill="#9aa3ad"/>
+  <polygon points="442,126 430,121 430,131" fill="#9aa3ad"/>
+
+  <text x="320" y="232" text-anchor="middle" fill="#5b6470" font-size="12">i.i.d. preserved → convergence rate of homogeneous data parallelism</text>
+  <text x="320" y="286" text-anchor="middle" fill="#1f4a63" font-size="13" font-weight="700">Result — −33.3% time, −54.2% cost, no accuracy loss (EuroSys 2025)</text>
+</svg>

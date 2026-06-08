@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="om-t om-d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="om-t">Omni-MP — practical PIM matrix mapping</title>
+  <desc id="om-d">Arbitrary LLM weight matrices and KV cache are reshaped by interlacing and cutting to fit the fixed PIM compute tile, with zero-padded tiles skipped, giving 40.2 percent average end-to-end speedup.</desc>
+  <rect x="1" y="1" width="638" height="318" rx="14" fill="#fbfaf8" stroke="#e3ded5"/>
+  <text x="24" y="36" fill="#1d2733" font-size="16" font-weight="700">Omni-MP · reshape arbitrary matrices to the PIM tile</text>
+
+  <!-- arbitrary matrices -->
+  <g>
+    <rect x="36" y="80" width="120" height="150" rx="6" fill="#eef3f6" stroke="#d6dde3"/>
+    <text x="96" y="72" text-anchor="middle" fill="#5b6470" font-size="12">LLM weights + KV</text>
+    <rect x="50" y="96" width="40" height="28" fill="#c9d6df"/>
+    <rect x="98" y="96" width="46" height="60" fill="#c9d6df"/>
+    <rect x="50" y="132" width="64" height="40" fill="#c9d6df"/>
+    <rect x="50" y="182" width="92" height="34" fill="#c9d6df"/>
+    <text x="96" y="248" text-anchor="middle" fill="#5b6470" font-size="11">mixed shapes</text>
+  </g>
+
+  <!-- transform -->
+  <rect x="232" y="120" width="176" height="70" rx="8" fill="#1f4a63"/>
+  <text x="320" y="148" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Interlace · cut</text>
+  <text x="320" y="168" text-anchor="middle" fill="#cfe0ea" font-size="11">6 mapping modes · skip zero tiles</text>
+
+  <!-- fixed tile -->
+  <g>
+    <rect x="484" y="80" width="120" height="150" rx="6" fill="#eef3f6" stroke="#d6dde3"/>
+    <text x="544" y="72" text-anchor="middle" fill="#5b6470" font-size="12">fixed PIM tile</text>
+    <g fill="#1f4a63" opacity="0.85">
+      <rect x="498" y="96" width="92" height="22"/><rect x="498" y="122" width="92" height="22"/>
+      <rect x="498" y="148" width="92" height="22"/><rect x="498" y="174" width="92" height="22"/>
+    </g>
+    <text x="544" y="216" text-anchor="middle" fill="#5b6470" font-size="11">4096 × 256 · banks filled</text>
+  </g>
+
+  <g stroke="#9aa3ad" stroke-width="2" fill="none">
+    <path d="M160,155 L228,155"/><path d="M412,155 L480,155"/>
+  </g>
+  <polygon points="228,155 216,150 216,160" fill="#9aa3ad"/>
+  <polygon points="480,155 468,150 468,160" fill="#9aa3ad"/>
+
+  <text x="320" y="300" text-anchor="middle" fill="#1f4a63" font-size="13" font-weight="700">Result — 40.2% average end-to-end speedup; attention, not only FFN</text>
+</svg>

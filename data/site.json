@@ -1,0 +1,104 @@
+{
+  "_comment": "Single source of truth for site content. index.html is hand-authored to match this file; update both together. All claims trace to the author's CV / curated achievement summaries and verified public sources (see WEBSITE_PLAN.md).",
+  "profile": {
+    "name_en": "Minsung Jang",
+    "name_ko": "장민성",
+    "tagline": "AI Systems & AI Accelerators",
+    "subtagline": "Full-Stack AI Infrastructure for Efficient and Scalable AI",
+    "positioning": "I build the computing systems that make large-scale AI practical and efficient — spanning accelerator-aware inference runtimes, GPU-cluster training, AI-datacenter networking, and cloud and secure systems.",
+    "affiliation": "AI Systems Research at Samsung SDS",
+    "education_short": "Ph.D., Georgia Tech",
+    "email": "mdpe36kr@gmail.com"
+  },
+  "links": {
+    "cv": "assets/cv/minsung-jang-cv.pdf",
+    "cv_available": true,
+    "scholar": "https://scholar.google.com/citations?user=o9WQFhIAAAAJ&hl=en",
+    "github": "https://github.com/MinsungMJ",
+    "linkedin": "https://www.linkedin.com/in/minsungjang",
+    "dblp": "https://dblp.org/pid/84/10278.html"
+  },
+  "pillars": [
+    {"n": 1, "title": "Accelerator-aware inference & runtimes", "body": "Real-hardware processing-in-memory scheduling and matrix mapping, low-precision kernels, and LLM serving.", "systems": "PAISE · Omni-MP · FireQ · DSDE"},
+    {"n": 2, "title": "GPU-cluster & systems-for-ML training", "body": "Convergence-safe, efficient training across heterogeneous GPU fleets; GPU-as-a-Service.", "systems": "JABAS · x.Cloud"},
+    {"n": 3, "title": "AI-datacenter networking", "body": "End-host RDMA/RoCEv2 congestion control for GPU interconnect at fabric scale.", "systems": "CORN (AMD hardware-NIC prototype)"},
+    {"n": 4, "title": "Cloud, OS & secure systems", "body": "Cloud platforms and storage, persistent memory, and confidential computing for secure AI execution.", "systems": "Samsung Cloud Platform · TIPS · Nested Enclaves"}
+  ],
+  "selected_research": [
+    {
+      "id": "paise", "title": "PAISE", "venue": "IEEE HPCA 2025", "category": "Peer-reviewed",
+      "problem": "Decoder-only LLM inference is memory-bound: attention re-reads a growing KV cache and stalls the GPU on HBM bandwidth.",
+      "contribution": "A per-layer GPU-vs-PIM offloading scheduler with data-layout adjustment and an interleaved-batched GEMM kernel on real HBM-PIM — up to 48.3% faster than GPU-only.",
+      "role": "Senior (last) author; set the direction and the offloading-scheduling algorithm and cost model.",
+      "diagram": "assets/svg/paise.svg",
+      "link": "https://www.samsungsds.com/en/publications/1289984_11682.html"
+    },
+    {
+      "id": "omnimp", "title": "Omni-MP", "venue": "MCCSys @ ACM ICS 2026 (to appear)", "category": "Peer-reviewed",
+      "problem": "Real PIM accepts only fixed matrix tiles, so prior PIM-for-LLM work accelerated only feed-forward layers, not attention.",
+      "contribution": "Generalized batched PIM-GEMV mapping (interlacing/cutting), zero-tile skipping, and PIM-aware KV concatenation — 40.2% average end-to-end speedup on real hardware.",
+      "role": "Senior co-author and real-PIM program lead; set the generalization goal.",
+      "diagram": "assets/svg/omnimp.svg",
+      "link": ""
+    },
+    {
+      "id": "jabas", "title": "JABAS", "venue": "EuroSys 2025", "category": "Peer-reviewed",
+      "problem": "Training on heterogeneous GPU clusters wastes resources, and the usual remedy breaks the i.i.d. assumption and hurts convergence.",
+      "contribution": "IIDP preserves convergence via virtual stream workers while batching and GPU allocation are tuned jointly — −33.3% time, −54.2% cost, no accuracy loss.",
+      "role": "Industry co-author (collaboration with UNIST); supplied the production heterogeneous-GPU problem and real-cluster validation context — did not lead the algorithm design.",
+      "diagram": "assets/svg/jabas.svg",
+      "link": "https://doi.org/10.1145/3689031.3696078",
+      "link2": "https://github.com/unist-ssl/JABAS", "link2_label": "code"
+    },
+    {
+      "id": "corn", "title": "CORN", "venue": "IEEE IPCCC 2023", "category": "Peer-reviewed",
+      "problem": "RoCEv2 leans on switch-level PFC, which causes head-of-line blocking and PFC storms at the scale of AI GPU fabrics.",
+      "contribution": "End-host, RTT/BDP-driven congestion control with selective-ACK recovery makes RDMA run PFC-free and switch-transparent — zero PFC events in evaluation.",
+      "role": "Senior (last) author; set the cloud-RDMA direction and the RTT-based congestion-detection idea. Implemented as a hardware-NIC prototype in collaboration with AMD and demonstrated at SC25.",
+      "diagram": "assets/svg/corn.svg",
+      "link": "https://ieeexplore.ieee.org/document/10253863/"
+    },
+    {
+      "id": "dsde", "title": "DSDE", "venue": "IEEE BigData 2025", "category": "Peer-reviewed",
+      "problem": "A fixed speculation length in speculative decoding wastes compute and creates batch stragglers under diverse serving load.",
+      "contribution": "A training-free, KLD-variance-driven per-sequence speculation length with an adaptive cap, implemented in vLLM — robust in low-acceptance-rate regimes.",
+      "role": "Senior co-author and research lead; drove the adaptive speculation-length cap and the vLLM integration.",
+      "diagram": "",
+      "link": "https://arxiv.org/abs/2509.01083"
+    }
+  ],
+  "publications_peer_reviewed": [
+    {"authors": "H. Lee, D. Baek, J. Son, J. Choi, K. Moon, <b>M. Jang</b>", "title": "PAISE: PIM-Accelerated Inference Scheduling Engine for Transformer-based LLM", "venue": "IEEE HPCA", "year": 2025, "note": "senior author", "link": "https://www.samsungsds.com/en/publications/1289984_11682.html"},
+    {"authors": "G. Yun, J. Kang, H. Jeong, S. Eom, <b>M. Jang</b>, Y.-r. Choi", "title": "JABAS: Joint Adaptive Batching and Automatic Scaling for DNN Training on Heterogeneous GPUs", "venue": "EuroSys", "year": 2025, "note": "with UNIST", "link": "https://doi.org/10.1145/3689031.3696078"},
+    {"authors": "D. Baek, J. Son, J. Choi, K. Bin, S. Choi, K. Moon, <b>M. Jang</b>, H. Lee", "title": "Omni-MP: Practical PIM Matrix Mapping for Accelerating LLM Inference on Real PIM Hardware", "venue": "MCCSys @ ACM ICS", "year": 2026, "note": "to appear", "link": ""},
+    {"authors": "M. Yang, J.-Y. Choi, K. Moon, <b>M. Jang</b>, E. Jeon", "title": "DSDE: Dynamic Speculative Decoding with KLD Stability for Real-World Serving", "venue": "Proceedings of IEEE BigData", "year": 2025, "note": "", "link": "https://arxiv.org/abs/2509.01083"},
+    {"authors": "J.-H. Cha, S. Kang, Y. Kang, H. Seo, J. Lee, J. Kim, <b>M. Jang</b>", "title": "CORN: Cloud-optimized RDMA Networking", "venue": "IEEE IPCCC", "year": 2023, "note": "senior author", "link": "https://ieeexplore.ieee.org/document/10253863/"}
+  ],
+  "publications_preprint": [
+    {"authors": "K. Bin, S. Choi, J. Son, J. Choi, D. Bae, D. Baek, K. Moon, <b>M. Jang</b>, H. Lee", "title": "FineServe: Precision-Aware KV Slab and Two-Level Scheduling for Heterogeneous Precision LLM Serving", "venue": "Preprint · under review", "id": "arXiv:2509.06261", "link": "https://arxiv.org/abs/2509.06261"}
+  ],
+  "talks": [
+    {"venue": "SC25 (Supercomputing 2025)", "title": "CORN implemented as a hardware-NIC prototype in collaboration with AMD, demonstrated at SC25", "year": 2025},
+    {"venue": "Intel AI Summit Seoul 2025", "title": "Performance Analysis of Intel Gaudi 3 for LLM Inference", "year": 2025},
+    {"venue": "Seoul National University", "title": "Trends in AI Infrastructure Technologies (invited lecture)", "year": 2024},
+    {"venue": "NVIDIA GTC 2021", "title": "High-performance / High-efficiency AI Model Training Cluster on Kubernetes (x.Cloud)", "year": 2021}
+  ],
+  "collaborations": [
+    "UC Berkeley Sky Computing Lab (Prof. Ion Stoica) — represented and led Samsung SDS's participation as a founding sponsor; AI-infrastructure systems and intercloud orchestration",
+    "UNIST (Prof. Young-ri Choi) — heterogeneous-GPU training (JABAS, EuroSys 2025)",
+    "KAIST Cyber Security Systems Lab (Prof. Brent Byunghoon Kang) — confidential computing for secure AI execution (under review)",
+    "AMD — CORN implemented as a hardware-NIC prototype, demonstrated at SC25 (2025)",
+    "Intel — AI software stack for the Gaudi 3 accelerator (Intel AI Summit 2025)",
+    "Ultra Ethernet Consortium — Samsung representative, next-generation AI-datacenter networking"
+  ],
+  "open_source": [
+    {"name": "Local-Inference-System (LIS)", "desc": "CPU-only local inference runtime focused on correctness, inspectability, reproducible artifacts, and transparent diagnostics.", "license": "Apache-2.0", "link": "https://github.com/MinsungMJ/Local-Inference-System"},
+    {"name": "llm-avx-lab", "desc": "Educational AVX2/FMA kernels for understanding LLM serving primitives from scalar C to SIMD.", "license": "MIT", "link": "https://github.com/MinsungMJ/llm-avx-lab"}
+  ],
+  "experience": [
+    {"org": "Samsung SDS", "role": "Cloud Research", "years": "2021–present", "detail": "Set a full-stack AI-infrastructure research agenda — GPU-as-a-Service / x.Cloud, PIM-accelerated inference, and AI-datacenter networking — and built a publishing systems-research program (HPCA, IEEE BigData, MCCSys@ICS)."},
+    {"org": "AT&T Labs Research", "role": "Research", "years": "2015–2020", "detail": "GPU-accelerated NFV data plane (GPUDirect RDMA), cloud-native 5G vRAN, and persistent-memory systems."},
+    {"org": "Georgia Institute of Technology", "role": "Ph.D., Computer Science", "years": "2008–2015", "detail": "Dissertation: Virtual Platforms — System Support to Enrich the Functionality of End Client Devices. Advisor: Prof. Karsten Schwan."},
+    {"org": "Yonsei University", "role": "B.S. (1998), M.S. (2000)", "years": "", "detail": "Mechanical Design and Production Engineering / Mechanical Engineering."}
+  ]
+}

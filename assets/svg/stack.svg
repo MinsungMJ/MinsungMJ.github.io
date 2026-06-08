@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 392" role="img" aria-labelledby="stk-t stk-d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="stk-t">Full-stack AI infrastructure</title>
+  <desc id="stk-d">One workload — large-model training and inference — driven down four layers: accelerator-aware runtimes, GPU-cluster training, AI-datacenter networking, and cloud and secure systems.</desc>
+  <rect x="1" y="1" width="718" height="390" rx="14" fill="#fbfaf8" stroke="#e3ded5"/>
+  <!-- workload spine -->
+  <rect x="28" y="28" width="664" height="44" rx="8" fill="#1f4a63"/>
+  <text x="360" y="55" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="700">Workload — large-model training &amp; inference</text>
+  <!-- flow arrow -->
+  <line x1="20" y1="84" x2="20" y2="372" stroke="#9aa3ad" stroke-width="2"/>
+  <polygon points="20,378 15,366 25,366" fill="#9aa3ad"/>
+  <text x="14" y="230" fill="#5b6470" font-size="12" transform="rotate(-90 14 230)" text-anchor="middle">one workload · full stack</text>
+
+  <g font-size="16" font-weight="700" fill="#1d2733">
+    <!-- L1 -->
+    <rect x="44" y="88" width="648" height="64" rx="8" fill="#eef3f6" stroke="#d6dde3"/>
+    <text x="60" y="116">1 · Accelerator-aware runtimes</text>
+    <text x="60" y="138" font-size="12.5" font-weight="400" fill="#5b6470">Real-HBM-PIM scheduling &amp; mapping, low-precision kernels, LLM serving — PAISE · Omni-MP · FireQ · DSDE</text>
+    <!-- L2 -->
+    <rect x="44" y="160" width="648" height="64" rx="8" fill="#eef3f6" stroke="#d6dde3"/>
+    <text x="60" y="188">2 · GPU-cluster &amp; systems-for-ML training</text>
+    <text x="60" y="210" font-size="12.5" font-weight="400" fill="#5b6470">Heterogeneous-GPU training, adaptive batching &amp; auto-scaling — JABAS · GPU-as-a-Service</text>
+    <!-- L3 -->
+    <rect x="44" y="232" width="648" height="64" rx="8" fill="#eef3f6" stroke="#d6dde3"/>
+    <text x="60" y="260">3 · AI-datacenter networking</text>
+    <text x="60" y="282" font-size="12.5" font-weight="400" fill="#5b6470">End-host RDMA/RoCEv2 congestion control, PFC-free fabric — CORN (realized as an AMD NIC)</text>
+    <!-- L4 -->
+    <rect x="44" y="304" width="648" height="64" rx="8" fill="#eef3f6" stroke="#d6dde3"/>
+    <text x="60" y="332">4 · Cloud, OS &amp; secure systems</text>
+    <text x="60" y="354" font-size="12.5" font-weight="400" fill="#5b6470">Cloud platform &amp; storage, persistent memory, confidential computing — TIPS · Nested Enclaves</text>
+  </g>
+</svg>
